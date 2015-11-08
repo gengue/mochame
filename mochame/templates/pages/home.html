@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load staticfiles i18n %}
+
+ {% block content %}
+ <section class="jumbotron text-center">
+    <div class="container">
+        <h1>Mochame!</h1>
+        <p class="text-muted">Url shortener service</p>
+        <div class="form-group form-inline">
+            <input class="form-control form-control-lg" type="text" name="target_url" id="targetUrl" placeholder="http://example.com">
+            <button class="btn btn-primary-outline btn-lg" id="mocharBtn">Mochar</button>
+        </div>
+        <div id="result" style="display:none">
+            <hr>
+            <div class="text-center">
+                <div class="form-inline">
+                    <i class="fa fa-link"></i>
+                    <input type="text" class="form-control" id="shortUrl">
+                    <button class="btn btn-primary-outline btn-sm" onclick="copyToClipboard()">
+                        Copy
+                    </button>
+                    <span class="text-muted copy-msg" style="color: #65AAB3;display:none;">Copied!</span>
+                </div>
+                <small class="text-muted">
+                    <i class="fa fa-angle-right"></i> 
+                    <a id="targetUrlResult" href="#"></a>
+                </small>
+            </div>
+        </div>
+    </div>
+ </section>
+ {% endblock content %} 
+
+ {% block javascript %}
+    <script src="{% static 'js/app.js' %}"></script>
+ {% endblock javascript %}
