@@ -2,10 +2,10 @@
 $(document).ready(function(){
   $("#mocharBtn").on("click", function(){
 
-    $(this).button('<i class="fa fa-spinner fa-spin"></i>');
-    $(this).prop('disabled', true);;
-
     if(verifyInput()){
+      $(this).button('<i class="fa fa-spinner fa-spin"></i>');
+      $(this).prop('disabled', true);;
+
       $.ajax({
         method: 'POST',
         url: '/api/v1/links/',
